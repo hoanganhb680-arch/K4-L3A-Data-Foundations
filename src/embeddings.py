@@ -80,7 +80,21 @@ class GeminiEmbedder:
         self.client = genai.Client(api_key=api_key)
 
     def __call__(self, text: str) -> list[float]:
-        response = self.client.models.embed_content(model=self.model_name, contents=text)
+        try:
+            import concurrent.futures
+
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(
+                    lambda: self.client.models.embed_content(model=self.model_name, contents=text)
+                )
+                response = future.result(timeout=20)
+        except Exception as exc:
+            from google.genai.errors import ClientError, ServerError
+
+            # Propagate permanent authentication errors, but wrap runtime/API
+            # failures so callers can recover or fallback.
+            raise RuntimeError(f"GeminiEmbedder call failed: {exc}") from exc
+
         return [float(value) for value in response.embeddings[0].values]
 
 

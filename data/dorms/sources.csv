@@ -1,0 +1,9 @@
+doc_id,file_path,title,source_url,retrieved_at,document_version,license_or_permission
+dorm-charge,data/dorms/dorm-charge.md,Mức thu ký túc xá PTIT cơ sở miền Bắc năm 2024-2025,https://ptit.edu.vn/thong-bao-quyet-dinh-ban-hanh-muc-thu-ky-tuc-xa-tai-co-so-mien-bac-nam-2024-2025/,2026-09-19,2024-08-23,public-source
+dorm-registration,data/dorms/dorm-registration.md,Hướng dẫn đăng ký ở nội trú HUCE học kỳ I năm học 2026-2027,https://ktx.huce.edu.vn/ban-quan-ly-ky-tuc-xa-huong-dan-dk-o-noi-tru-hoc-ky-i-nam-hoc-2026-2027,2026-09-19,2026-08-17,public-source
+dorm-slot,data/dorms/dorm-slot.md,Bố trí chỗ ở nội trú cho sinh viên khóa 2025 PTIT tại Hà Nội,https://ptit.edu.vn/thong-bao-ve-viec-bo-tri-sinh-vien-khoa-2025-noi-tru-o-cac-ky-tuc-xa-tai-co-so-dao-tao-ha-noi/,2026-09-19,2025-08-26,public-source
+huce-dormitory-management,data/dorms/huce-dormitory-management.md,Ban quản lý Ký túc xá Đại học Xây dựng Hà Nội,https://ktx.huce.edu.vn/,2026-09-19,not-stated,public-source
+hust-dormitory-overview,data/dorms/hust-dormitory-overview.md,Ký túc xá Đại học Bách khoa Hà Nội,https://hust.edu.vn/vi/sinh-vien/sinh-vien-hien-tai/ky-tuc-xa-51010.html,2026-09-19,2016-07-10,public-source
+tmu-dormitory-electric-water-fees,data/dorms/tmu-dormitory-electric-water-fees.md,Điều chỉnh mức giá điện nước tại Khu nội trú sinh viên,https://kntsv.tmu.edu.vn/van-ban-quan-ly/dieu-chinh-muc-gia-dien-nuoc-tai-khu-noi-tru-sinh-vien-1429,2026-09-19,2024-08-05,public-source
+tmu-dormitory-registration-hanoi,data/dorms/tmu-dormitory-registration-hanoi.md,Cách thức đăng ký ở Ký túc xá cơ sở Hà Nội,https://kntsv.tmu.edu.vn/tin-tuc/chi-tiet/cach-thuc-dang-ky-o-ky-tuc-xa-co-so-ha-noi-23232,2026-09-19,2023-08-25,public-source
+tmu-student-dormitory,data/dorms/tmu-student-dormitory.md,Khu Nội trú sinh viên Trường Đại học Thương mại,https://kntsv.tmu.edu.vn/,2026-09-19,not-stated,public-source

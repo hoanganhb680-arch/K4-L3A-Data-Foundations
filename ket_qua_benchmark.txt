@@ -1,0 +1,63 @@
+Strategy: SentenceChunker(max_sentences_per_chunk=2)
+Embedding backend: gemini-embedding-001
+Corpus dir: data/dorms
+Loaded 8 files -> 85 chunks
+====================================================================================================
+
+Q1 | filter={'audience': 'student'} | score=1/2
+Query: Tân sinh viên có thể đăng ký ở nội trú qua hình thức nào?
+Gold needle found in context: True
+Top doc ids: ['dorm-slot', 'dorm-registration', 'tmu-dormitory-registration-hanoi']
+Declared gold doc ids: ['dorm-registration', 'tmu-dormitory-registration-hanoi']
+  [1] score=0.8629 doc=dorm-slot
+  [2] score=0.8509 doc=dorm-registration
+  [3] score=0.8128 doc=tmu-dormitory-registration-hanoi
+
+-- Unfiltered A/B top-3 (same query, no metadata filter) --
+  [U1] score=0.8629 doc=dorm-slot
+  [U2] score=0.8509 doc=dorm-registration
+  [U3] score=0.8128 doc=tmu-dormitory-registration-hanoi
+
+Q2 | filter=none | score=2/2
+Query: Mức phí ở ký túc xá PTIT cơ sở miền Bắc được ban hành theo quyết định số mấy?
+Gold needle found in context: True
+Top doc ids: ['dorm-charge', 'dorm-charge', 'dorm-slot']
+Declared gold doc ids: ['dorm-charge']
+  [1] score=0.8524 doc=dorm-charge
+  [2] score=0.7931 doc=dorm-charge
+  [3] score=0.7457 doc=dorm-slot
+
+Q3 | filter=none | score=2/2
+Query: Ký túc xá Đại học Bách khoa Hà Nội có tổng cộng bao nhiêu phòng ở?
+Gold needle found in context: True
+Top doc ids: ['hust-dormitory-overview', 'dorm-slot', 'hust-dormitory-overview']
+Declared gold doc ids: ['hust-dormitory-overview']
+  [1] score=0.8288 doc=hust-dormitory-overview
+  [2] score=0.7672 doc=dorm-slot
+  [3] score=0.7664 doc=hust-dormitory-overview
+
+Q4 | filter=none | score=0/2
+Query: Văn bản điều chỉnh mức giá điện nước tại khu nội trú TMU được ban hành khi nào?
+Gold needle found in context: False
+Top doc ids: ['tmu-dormitory-electric-water-fees', 'tmu-dormitory-electric-water-fees', 'tmu-dormitory-electric-water-fees']
+Declared gold doc ids: ['tmu-dormitory-electric-water-fees']
+  [1] score=0.8101 doc=tmu-dormitory-electric-water-fees
+  [2] score=0.7540 doc=tmu-dormitory-electric-water-fees
+  [3] score=0.7492 doc=tmu-dormitory-electric-water-fees
+
+Failure analysis:
+- Top-3 đều đúng doc_id nhưng không có chunk nào chứa ngày ban hành 05/08/2024.
+- SentenceChunker(max_sentences_per_chunk=2) đã tách câu chứa ngày ra thành một chunk riêng nhưng chunk đó không lọt top-3.
+- Đây là trường hợp "top-3 đúng tài liệu nhưng sai section".
+
+Q5 | filter=none | score=2/2
+Query: Đối tượng nào được ưu tiên khi xét duyệt chỗ ở nội trú?
+Gold needle found in context: True
+Top doc ids: ['dorm-slot', 'dorm-slot', 'tmu-dormitory-registration-hanoi']
+Declared gold doc ids: ['dorm-registration', 'dorm-slot', 'tmu-dormitory-registration-hanoi']
+  [1] score=0.8441 doc=dorm-slot
+  [2] score=0.7773 doc=dorm-slot
+  [3] score=0.7738 doc=tmu-dormitory-registration-hanoi
+
+====================================================================================================
+Retrieval quality: 7/10
